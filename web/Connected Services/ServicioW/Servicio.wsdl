@@ -1,0 +1,914 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="mtdListarCategoria">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarCategoriaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarCategoriaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarCiudad">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarCiudadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarCiudadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarEstado">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarEstadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarEstadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarTipo">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarTipoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarTipoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarInmobiliaria">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUsuario" type="tns:clUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clUsuario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Apellido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ciudad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ubicacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdRol" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="mtdListarInmobiliariaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarInmobiliariaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacionInmo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublicacion" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clPublicacion">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdPublicacion" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nombre" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Precio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Estrato" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Direccion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Habitaciones" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdTipo" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdEstado" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCiudad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IdCategoria" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="mtdListarPublicacionInmoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicacionInmoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublica" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicacionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicaciones2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPubli" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicaciones2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicaciones2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacion3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublica" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacion3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicacion3Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacionesU">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPubliU" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacionesUResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicacionesUResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacionesU2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPubliU2" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarPublicacionesU2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarPublicacionesU2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarPublicacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublicacion" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarPublicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdRegistrarPublicacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdEditarPublicacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objPublicacion" type="tns:clPublicacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdEditarPublicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdEditarPublicacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="objUsuario" type="tns:clUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdRegistrarUsuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Imagenes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contrasena" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImagenesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImagenesResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdListarRol">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdListarRolResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mtdListarRolResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarFoto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="foto" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdRegistrarFotoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdRegistrarFotoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="mtdUltimaPublicacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="mtdUltimaPublicacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mtdUltimaPublicacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="mtdListarCategoriaSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarCategoria" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarCategoriaSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarCategoriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarCiudadSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarCiudad" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarCiudadSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarCiudadResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarEstadoSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarEstado" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarEstadoSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarEstadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarTipoSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarTipo" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarTipoSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarTipoResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarInmobiliariaSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarInmobiliaria" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarInmobiliariaSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarInmobiliariaResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionInmoSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacionInmo" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionInmoSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacionInmoResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacion" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicaciones2SoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicaciones2" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicaciones2SoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicaciones2Response" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacion3SoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacion3" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacion3SoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacion3Response" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionesUSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacionesU" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionesUSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacionesUResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionesU2SoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacionesU2" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarPublicacionesU2SoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarPublicacionesU2Response" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarPublicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarPublicacion" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarPublicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarPublicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdEditarPublicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdEditarPublicacion" />
+  </wsdl:message>
+  <wsdl:message name="mtdEditarPublicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdEditarPublicacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImagenesSoapIn">
+    <wsdl:part name="parameters" element="tns:Imagenes" />
+  </wsdl:message>
+  <wsdl:message name="ImagenesSoapOut">
+    <wsdl:part name="parameters" element="tns:ImagenesResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarRolSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdListarRol" />
+  </wsdl:message>
+  <wsdl:message name="mtdListarRolSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdListarRolResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarFotoSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarFoto" />
+  </wsdl:message>
+  <wsdl:message name="mtdRegistrarFotoSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdRegistrarFotoResponse" />
+  </wsdl:message>
+  <wsdl:message name="mtdUltimaPublicacionSoapIn">
+    <wsdl:part name="parameters" element="tns:mtdUltimaPublicacion" />
+  </wsdl:message>
+  <wsdl:message name="mtdUltimaPublicacionSoapOut">
+    <wsdl:part name="parameters" element="tns:mtdUltimaPublicacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioSoap">
+    <wsdl:operation name="mtdListarCategoria">
+      <wsdl:input message="tns:mtdListarCategoriaSoapIn" />
+      <wsdl:output message="tns:mtdListarCategoriaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarCiudad">
+      <wsdl:input message="tns:mtdListarCiudadSoapIn" />
+      <wsdl:output message="tns:mtdListarCiudadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarEstado">
+      <wsdl:input message="tns:mtdListarEstadoSoapIn" />
+      <wsdl:output message="tns:mtdListarEstadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarTipo">
+      <wsdl:input message="tns:mtdListarTipoSoapIn" />
+      <wsdl:output message="tns:mtdListarTipoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarInmobiliaria">
+      <wsdl:input message="tns:mtdListarInmobiliariaSoapIn" />
+      <wsdl:output message="tns:mtdListarInmobiliariaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionInmo">
+      <wsdl:input message="tns:mtdListarPublicacionInmoSoapIn" />
+      <wsdl:output message="tns:mtdListarPublicacionInmoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion">
+      <wsdl:input message="tns:mtdListarPublicacionSoapIn" />
+      <wsdl:output message="tns:mtdListarPublicacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicaciones2">
+      <wsdl:input message="tns:mtdListarPublicaciones2SoapIn" />
+      <wsdl:output message="tns:mtdListarPublicaciones2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion3">
+      <wsdl:input message="tns:mtdListarPublicacion3SoapIn" />
+      <wsdl:output message="tns:mtdListarPublicacion3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionesU">
+      <wsdl:input message="tns:mtdListarPublicacionesUSoapIn" />
+      <wsdl:output message="tns:mtdListarPublicacionesUSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionesU2">
+      <wsdl:input message="tns:mtdListarPublicacionesU2SoapIn" />
+      <wsdl:output message="tns:mtdListarPublicacionesU2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarPublicacion">
+      <wsdl:input message="tns:mtdRegistrarPublicacionSoapIn" />
+      <wsdl:output message="tns:mtdRegistrarPublicacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdEditarPublicacion">
+      <wsdl:input message="tns:mtdEditarPublicacionSoapIn" />
+      <wsdl:output message="tns:mtdEditarPublicacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarUsuario">
+      <wsdl:input message="tns:mtdRegistrarUsuarioSoapIn" />
+      <wsdl:output message="tns:mtdRegistrarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Imagenes">
+      <wsdl:input message="tns:ImagenesSoapIn" />
+      <wsdl:output message="tns:ImagenesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarRol">
+      <wsdl:input message="tns:mtdListarRolSoapIn" />
+      <wsdl:output message="tns:mtdListarRolSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarFoto">
+      <wsdl:input message="tns:mtdRegistrarFotoSoapIn" />
+      <wsdl:output message="tns:mtdRegistrarFotoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="mtdUltimaPublicacion">
+      <wsdl:input message="tns:mtdUltimaPublicacionSoapIn" />
+      <wsdl:output message="tns:mtdUltimaPublicacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioSoap" type="tns:ServicioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mtdListarCategoria">
+      <soap:operation soapAction="http://tempuri.org/mtdListarCategoria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarCiudad">
+      <soap:operation soapAction="http://tempuri.org/mtdListarCiudad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarEstado">
+      <soap:operation soapAction="http://tempuri.org/mtdListarEstado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarTipo">
+      <soap:operation soapAction="http://tempuri.org/mtdListarTipo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarInmobiliaria">
+      <soap:operation soapAction="http://tempuri.org/mtdListarInmobiliaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionInmo">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicacionInmo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicaciones2">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicaciones2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion3">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicacion3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionesU">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicacionesU" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionesU2">
+      <soap:operation soapAction="http://tempuri.org/mtdListarPublicacionesU2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarPublicacion">
+      <soap:operation soapAction="http://tempuri.org/mtdRegistrarPublicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdEditarPublicacion">
+      <soap:operation soapAction="http://tempuri.org/mtdEditarPublicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/mtdRegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Imagenes">
+      <soap:operation soapAction="http://tempuri.org/Imagenes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarRol">
+      <soap:operation soapAction="http://tempuri.org/mtdListarRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarFoto">
+      <soap:operation soapAction="http://tempuri.org/mtdRegistrarFoto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdUltimaPublicacion">
+      <soap:operation soapAction="http://tempuri.org/mtdUltimaPublicacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioSoap12" type="tns:ServicioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="mtdListarCategoria">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarCategoria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarCiudad">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarCiudad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarEstado">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarEstado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarTipo">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarTipo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarInmobiliaria">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarInmobiliaria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionInmo">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicacionInmo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicaciones2">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicaciones2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacion3">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicacion3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionesU">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicacionesU" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarPublicacionesU2">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarPublicacionesU2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarPublicacion">
+      <soap12:operation soapAction="http://tempuri.org/mtdRegistrarPublicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdEditarPublicacion">
+      <soap12:operation soapAction="http://tempuri.org/mtdEditarPublicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/mtdRegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Imagenes">
+      <soap12:operation soapAction="http://tempuri.org/Imagenes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdListarRol">
+      <soap12:operation soapAction="http://tempuri.org/mtdListarRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdRegistrarFoto">
+      <soap12:operation soapAction="http://tempuri.org/mtdRegistrarFoto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mtdUltimaPublicacion">
+      <soap12:operation soapAction="http://tempuri.org/mtdUltimaPublicacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Servicio">
+    <wsdl:port name="ServicioSoap" binding="tns:ServicioSoap">
+      <soap:address location="http://localhost:60951/Servicio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioSoap12" binding="tns:ServicioSoap12">
+      <soap12:address location="http://localhost:60951/Servicio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
