@@ -125,7 +125,7 @@
               <div class="p-4 property-body">
                 <h1 class="property-title"> &nbsp &nbsp<%#Eval("Nombre") %></h1> 
                 <span class="property-location d-block mb-3"><span class="property-icon icon-room"></span> <%#Eval("Email") %></span>
-            ¿    <strong class="property-price text-primary mb-3 d-block text-success"><%#Eval("Telefono") %></strong>
+               <strong class="property-price text-primary mb-3 d-block text-success"><%#Eval("Telefono") %></strong>
                 <ul class="property-specs-wrap mb-3 mb-lg-0">
                   <li>
                     <span class="property-specs">Ciudad</span>
